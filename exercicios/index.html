@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entre Flores e Raízes ✨</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #f5eee7;
+            color: #5d4a50;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           FUNDO MÁGICO
+        ========================== */
+
+        .forest {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 50% 30%,
+                    rgba(255, 245, 218, .9),
+                    transparent 25%),
+                linear-gradient(
+                    to bottom,
+                    #d9e8d1 0%,
+                    #b9d2b5 35%,
+                    #91b18f 70%,
+                    #66856b 100%
+                );
+        }
+
+        /* Névoa */
+
+        .mist {
+            position: absolute;
+            width: 120%;
+            height: 220px;
+            left: -10%;
+            bottom: 12%;
+            background: rgba(255,255,255,.25);
+            filter: blur(35px);
+            border-radius: 50%;
+            animation: mist 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes mist {
+            from {
+                transform: translateX(-5%);
+            }
+
+            to {
+                transform: translateX(5%);
+            }
+        }
+
+        /* =========================
+           ESTRELAS / PARTÍCULAS
+        ========================== */
+
+        .sparkle {
+            position: absolute;
+            color: #fff8d7;
+            font-size: 18px;
+            animation: float 4s ease-in-out infinite;
+            text-shadow: 0 0 12px #fff3b0;
+        }
+
+        .s1 { top: 18%; left: 15%; animation-delay: 0s; }
+        .s2 { top: 35%; left: 80%; animation-delay: 1s; }
+        .s3 { top: 52%; left: 25%; animation-delay: 2s; }
+        .s4 { top: 25%; left: 62%; animation-delay: .5s; }
+        .s5 { top: 65%; left: 72%; animation-delay: 1.5s; }
+        .s6 { top: 45%; left: 45%; animation-delay: 2.5s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: .5;
+            }
+
+            50% {
+                transform: translateY(-20px) scale(1.4);
+                opacity: 1;
+            }
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .little-text {
+            font-size: 14px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #fdf8e8;
+            margin-bottom: 20px;
+            opacity: .9;
+        }
+
+        h1 {
+            font-size: clamp(50px, 9vw, 110px);
+            font-weight: normal;
+            color: #fffaf0;
+            text-shadow:
+                0 3px 15px rgba(62, 86, 62, .4);
+            line-height: .9;
+        }
+
+        .subtitle {
+            max-width: 650px;
+            margin-top: 30px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #fffdf6;
+        }
+
+        .enter {
+            margin-top: 45px;
+            padding: 15px 35px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,.7);
+            background: rgba(255,255,255,.25);
+            backdrop-filter: blur(8px);
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: .4s;
+        }
+
+        .enter:hover {
+            background: rgba(255,255,255,.5);
+            transform: translateY(-5px);
+        }
+
+        /* =========================
+           FLORESTA
+        ========================== */
+
+        .trees {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 45%;
+            pointer-events: none;
+        }
+
+        .tree {
+            position: absolute;
+            bottom: 0;
+            width: 100px;
+            height: 300px;
+            background: #536d58;
+            border-radius: 50% 50% 5% 5%;
+            opacity: .8;
+        }
+
+        .tree::before,
+        .tree::after {
+            content: "";
+            position: absolute;
+            background: #6d876d;
+            border-radius: 50%;
+        }
+
+        .tree::before {
+            width: 220px;
+            height: 180px;
+            left: -60px;
+            top: -100px;
+        }
+
+        .tree::after {
+            width: 180px;
+            height: 160px;
+            left: -20px;
+            top: -160px;
+        }
+
+        .tree:nth-child(1) {
+            left: 3%;
+            height: 280px;
+        }
+
+        .tree:nth-child(2) {
+            left: 25%;
+            height: 380px;
+        }
+
+        .tree:nth-child(3) {
+            right: 15%;
+            height: 340px;
+        }
+
+        .tree:nth-child(4) {
+            right: 0;
+            height: 270px;
+        }
+
+        /* =========================
+           HISTÓRIA
+        ========================== */
+
+        .story {
+            background: #fbf3eb;
+            padding: 110px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .story::before {
+            content: "";
+            position: absolute;
+            top: -60px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #fbf3eb;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .story-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .eyebrow {
+            color: #9b7b86;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+        }
+
+        h2 {
+            font-size: clamp(35px, 6vw, 65px);
+            font-weight: normal;
+            color: #6d5360;
+            margin: 15px 0 30px;
+        }
+
+        .story p {
+            font-size: 19px;
+            line-height: 2;
+            color: #756269;
+        }
+
+        /* =========================
+           CENA FLOR + ÁRVORE
+        ========================== */
+
+        .scene {
+            margin: 70px auto;
+            width: min(900px, 95%);
+            height: 420px;
+            border-radius: 35px;
+            overflow: hidden;
+            position: relative;
+
+            background:
+                radial-gradient(circle at 50% 35%,
+                    #fff0b9,
+                    transparent 12%),
+                linear-gradient(
+                    to bottom,
+                    #c9dfc4,
+                    #8cae89
+                );
+
+            box-shadow: 0 20px 60px rgba(81, 96, 77, .18);
+        }
+
+        /* árvore */
+
+        .big-tree {
+            position: absolute;
+            bottom: 0;
+            right: 12%;
+            width: 80px;
+            height: 300px;
+            background: #765b4e;
+            border-radius: 40px 40px 5px 5px;
+        }
+
+        .big-tree::before {
+            content: "";
+            position: absolute;
+            width: 340px;
+            height: 240px;
+            background: #658265;
+            border-radius: 50%;
+            left: -130px;
+            top: -160px;
+            box-shadow:
+                100px 30px 0 #759473,
+                -80px 60px 0 #799976;
+        }
+
+        /* flor */
+
+        .flower {
+            position: absolute;
+            bottom: 35px;
+            left: 25%;
+            width: 30px;
+            height: 130px;
+            background: #638c61;
+            border-radius: 50px;
+            transform: rotate(-4deg);
+        }
+
+        .petals {
+            position: absolute;
+            top: -25px;
+            left: -25px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .petal {
+            position: absolute;
+            width: 38px;
+            height: 55px;
+            background: #f3c9d8;
+            border-radius: 50% 50% 45% 45%;
+            box-shadow: 0 0 15px rgba(255,220,235,.7);
+        }
+
+        .p1 {
+            left: 20px;
+            top: 0;
+        }
+
+        .p2 {
+            left: 0;
+            top: 25px;
+            transform: rotate(-70deg);
+        }
+
+        .p3 {
+            left: 40px;
+            top: 25px;
+            transform: rotate(70deg);
+        }
+
+        .p4 {
+            left: 20px;
+            top: 40px;
+            transform: rotate(180deg);
+        }
+
+        .center {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: #f5d99b;
+            border-radius: 50%;
+            top: 27px;
+            left: 27px;
+            z-index: 3;
+        }
+
+        /* =========================
+           FRASE
+        ========================== */
+
+        .quote {
+            padding: 110px 20px;
+            background: #e9dfe9;
+            text-align: center;
+        }
+
+        .quote p {
+            max-width: 800px;
+            margin: auto;
+            font-size: clamp(25px, 5vw, 45px);
+            line-height: 1.5;
+            font-style: italic;
+            color: #705d72;
+        }
+
+        .quote span {
+            display: block;
+            margin-top: 30px;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-style: normal;
+            color: #927c91;
+        }
+
+        /* =========================
+           FINAL
+        ========================== */
+
+        .final {
+            min-height: 70vh;
+            background: linear-gradient(
+                to bottom,
+                #e9dfe9,
+                #c5d9c1
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .final h2 {
+            color: #fffaf3;
+            text-shadow: 0 3px 15px rgba(70,80,65,.3);
+        }
+
+        .final p {
+            color: #fffaf3;
+            font-size: 19px;
+            margin-top: 20px;
+        }
+
+        .heart {
+            font-size: 35px;
+            margin-top: 30px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            .subtitle {
+                font-size: 17px;
+            }
+
+            .scene {
+                height: 350px;
+            }
+
+            .big-tree {
+                right: 3%;
+                transform: scale(.8);
+                transform-origin: bottom;
+            }
+
+            .flower {
+                left: 18%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         ABERTURA
+    ========================== -->
+
+    <section class="forest">
+
+        <div class="mist"></div>
+
+        <div class="sparkle s1">✦</div>
+        <div class="sparkle s2">✧</div>
+        <div class="sparkle s3">✦</div>
+        <div class="sparkle s4">✧</div>
+        <div class="sparkle s5">✦</div>
+        <div class="sparkle s6">✧</div>
+
+        <div class="hero">
+
+            <div class="little-text">
+                Um conto da floresta
+            </div>
+
+            <h1>
+                Entre Flores<br>
+                & Raízes
+            </h1>
+
+            <p class="subtitle">
+                Em uma floresta onde a magia dorme entre as folhas,
+                uma pequena flor descobriu que até os corações mais
+                diferentes podem florescer juntos.
+            </p>
+
+            <a href="#historia" class="enter">
+                ✧ Entrar na floresta ✧
+            </a>
+
+        </div>
+
+        <div class="trees">
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         HISTÓRIA
+    ========================== -->
+
+    <section class="story" id="historia">
+
+        <div class="story-content">
+
+            <div class="eyebrow">
+                Era uma vez...
+            </div>
+
+            <h2>Uma flor solitária</h2>
+
+            <p>
+                Muito além das montanhas, existia uma floresta
+                que nunca aparecia nos mapas.
+            </p>
+
+            <p>
+                Ali, entre musgos cobertos de orvalho e pequenas
+                luzes dançando no ar, vivia uma delicada flor.
+            </p>
+
+            <p>
+                Ela era pequena demais para alcançar as copas
+                das árvores e frágil demais para enfrentar as
+                tempestades sozinha.
+            </p>
+
+            <p>
+                Até que um dia, encontrou alguém que estava ali
+                havia centenas de anos.
+            </p>
+
+        </div>
+
+
+        <!-- CENA -->
+
+        <div class="scene">
+
+            <div class="big-tree"></div>
+
+            <div class="flower">
+
+                <div class="petals">
+
+                    <div class="petal p1"></div>
+                    <div class="petal p2"></div>
+                    <div class="petal p3"></div>
+                    <div class="petal p4"></div>
+
+                    <div class="center"></div>
+
+                </div>
+
+            </div>
+
+            <div class="sparkle s1">✦</div>
+            <div class="sparkle s3">✧</div>
+            <div class="sparkle s5">✦</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FRASE
+    ========================== -->
+
+    <section class="quote">
+
+        <p>
+            “Ela descobriu que algumas pessoas
+            não chegam para mudar quem somos.
+            Chegam para nos dar um lugar
+            onde podemos florescer.”
+        </p>
+
+        <span>
+            — Entre Flores & Raízes
+        </span>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL
+    ========================== -->
+
+    <section class="final">
+
+        <div>
+
+            <h2>
+                E foi assim que começou...
+            </h2>
+
+            <p>
+                Uma história pequena como uma flor,
+                mas grande como uma floresta inteira.
+            </p>
+
+            <div class="heart">
+                ♡
+            </div>
+
+        </div>
+
+    </section>
+
+
+</body>
+</html>

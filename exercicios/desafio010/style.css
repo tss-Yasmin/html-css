@@ -1,0 +1,127 @@
+@font-face {
+  font-family:'mh';
+  src: url('fonts/mh.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:'burton';
+  src: url('fonts/burton.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #140614;
+  margin: 0;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  color: whitesmoke;
+}
+
+header > h1 {
+  margin-bottom: 35px ;
+  font-family:'mh';
+  font-size: 70px;
+  letter-spacing: 12px;
+}
+
+header > h3 {
+  margin: 0 auto 35px auto;
+  width: 50%;
+}
+
+header > h1, h3 {
+  text-shadow: 2px 3px 5px black;
+  text-align: center;
+}
+header {
+  background-image: linear-gradient(to top, #140614, #420442, #220b22);
+  padding: 35px 0 20px 10px ;
+}
+
+nav > a {
+  padding: 5px 10px;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+nav > a:hover {
+  color: rgb(247, 14, 169);
+  text-decoration: underline;
+}
+
+main {
+  width: 100% ;
+  margin: 0 auto ;
+}
+
+main > h1, h2 {
+  background-color: #251825;
+  font-family: 'burton' ;
+  letter-spacing: 2px ;
+}
+
+main > p {
+  margin-bottom: 30px;
+  text-indent: 10px;
+}
+
+.logo {
+transition: transform 0.5s ;
+}
+
+.logo:hover {
+opacity: 0.5 ;
+transform: scale(1.1);
+}
+
+.imagens {
+  display: flex;
+  gap: 10px;
+  display: block;
+}
+
+.imagens > img {
+  width: 200px; height: 400px;
+}
+
+.imagens > img:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+  transition: transform 0.5s ;
+  cursor: pointer;
+}
+
+.characters-list {
+  color: whitesmoke;
+  display: block;
+}
+
+footer {
+  background-image: linear-gradient(to top, #140614, #420442, #220b22);
+  padding: 20px ;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.wallpaper {
+  width: 100%;
+}
+
+
+@media (min-width: 680px) {
+  main {
+    width: 80%;
+  } 
+}
+
+@media (min-width: 1029px) {
+  .characters-list {
+    display: flex;
+    gap: 170px;
+  }
+}
