@@ -96,6 +96,10 @@ transform: scale(1.1);
   cursor: pointer;
 }
 
+.river {
+  width: 250px !important;
+}
+
 .characters-list {
   color: whitesmoke;
   display: block;
