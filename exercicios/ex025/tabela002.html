@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso para tabelas grandes</title>
+    <style>
+
+        table {
+            width: 500px;
+            border-collapse: collapse;
+            position: relative;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        caption {
+          font-size: 1.5em;
+          font-weight: bold;
+          padding: 10px;
+          background-color: black;
+          color: white;
+        }
+
+        thead, tfoot {
+          background-color: black;
+          color: white;
+        }
+
+        thead > tr > th {
+          position: sticky;
+          top: -1px;
+          background-color: black;
+        }
+        tbody > tr:nth-child(even) {
+          background-color: rgba(160, 182, 241, 0.322);
+        }
+
+        tbody > tr:nth-child(odd) {
+          background-color: rgba(214, 179, 247, 0.349);
+        }
+
+        td.num {
+          text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        uso de tabelas grandes
+    </h1>
+
+    <table>
+      <caption>
+        População das unidades federativas
+      </caption>
+        <thead>
+            <tr>
+                <th scope="col">estado</th>
+                <th scope="col" style="width: 50px;">População</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+             <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+             <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+             <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+             <tr>
+                <td>São paulo</td>
+                <td>45.000</td>
+            </tr>
+            <tr>
+                <td>minas gerais</td>
+                <td>45.000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row"> total de habitantes</th>
+                <td>0000</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
