@@ -1,5 +1,9 @@
-.usuario {
-  border: 1px solid black;
+* {
+
+}
+
+p {
+   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
   outline: none;
